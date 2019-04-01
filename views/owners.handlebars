@@ -1,0 +1,151 @@
+<html>
+
+<title>Owners</title>
+
+<main>
+	<h2> This is the Owners Page </h2> 
+		  <p>From this page the user can go through, add, delete, and browse all the vets. </p>
+		  <table>
+		  <tr>
+			<th>Owner ID </th>
+			<th>First name</th>
+			<th>Last name</th>
+			<th>Address</th>
+			<th>City</th>
+			<th>State</th>
+			<th>Zipcode</th>
+			<th>Phone number</th>
+			<th>Email</th>
+	      </tr>
+		  {{#each owner_list}}
+		  <tr>
+			<td><a href="/owner_details?owner_id={{owner_id}}">{{owner_id}}</a></td> 
+			<td><a href="/owner_details?owner_id={{owner_id}}">{{first_name}}</a></td>
+			<td><a href="/owner_details?owner_id={{owner_id}}">{{last_name}}</a></td>
+			<td>{{address}}</td>
+			<td>{{city}}</td>
+			<td>{{state}}</td>
+			<td>{{zip_code}}</td> 
+			<td>{{phone_number}}</td>
+			<td>{{email}}</td>
+			<!-- Commenting out, don't want to delete owners <td><button onclick="deleteowner({{owner_id}})">Delete</button> </td>-->
+		  </tr>
+		  {{/each}} 
+		  </table>
+		   
+		  
+
+	<h2>Add Owner</h2> 
+	<form id="addowner" action="/owners" method="post">
+	    First Name 
+		<input type="text" name="first_name"><br>
+	    Last Name 
+	    <input type="text" name="last_name"><br>
+	    Address 
+	    <input type="text" name="address"><br>
+	    City
+	    <input type="text" name="city"><br>
+		State
+	    <input type="text" name="state"><br>
+	    Zipcode  
+	    <input type="number" name="zip_code"><br>
+	    Phone Number
+	    <input type="number" name="phone_number"><br>
+	    Email 
+	    <input type="text" name="email"><br>
+		<input type="submit" value="Submit"><br>
+	  </form>
+	  
+	</main>
+</html>
+<!--
+
+
+
+    <main>
+      <h2> This is the Vets Page </h2> 
+	  <p>From this page the user can go through and browse all the owners. </p>
+	  
+	  <p> List of vets displayed </p> 
+	  
+	  
+	  <h2>Add a Vet</h2> 
+	  <p>Here a user can add a vet into the database.</p>
+	  <form>
+	    First Name 
+		<input type="text" name="fname"><br>
+	    Last Name 
+	    <input type="text" name="lname"><br>
+	    Address 
+	    <input type="text" name="dog_name"><br>
+	    City
+	    <input type="text" name="dog_name"><br>
+	    Zipcode  
+	    <input type="number" name="dog_name"><br>
+	    Phone Number
+	    <input type="number" name="dog_availability"><br>
+	    Email 
+	    <input type="text" name="dog_shelter"><br>
+		Shelter
+		<input type="text" name="vet_shelter"><br>
+		<input type="submit" value="Submit"><br>
+	  </form>
+	  
+	  <h2>Add a dog to a vet</h2> 
+	  <p>This is where a user can add a dog to a vet. </p> 
+	  <form>
+	    Dog ID 
+	    <input type="" name="dog_name"><br>
+		Vet ID 
+		<input type="text" name="fname"><br>
+		<input type="submit" value="Submit"><br>
+	  </form>
+	 
+	  <h2>Modify Vet</h2> 
+	  <p>Here a user can edit a vet's information.</p>
+	  <form>
+	    Vet ID 
+		<input type="text" name="fname"><br>
+	    First Name 
+		<input type="text" name="fname"><br>
+	    Last Name 
+	    <input type="text" name="lname"><br>
+	    Address 
+	    <input type="text" name="dog_name"><br>
+	    City
+	    <input type="text" name="dog_name"><br>
+	    Zipcode  
+	    <input type="number" name="dog_name"><br>
+	    Phone Number
+	    <input type="number" name="dog_availability"><br>
+	    Email 
+	    <input type="text" name="dog_shelter"><br>
+		Shelter
+		<input type="text" name="vet_shelter"><br>
+		<input type="submit" value="Submit"><br>
+	  </form>
+
+	 
+    </main>
+
+  </body>
+
+</html>
+
+
+
+<h3>Current people:</h3>
+<table>
+    <thead> 
+        <th>First Name</th> 
+        <th>Last Name</th> 
+        <th>Homeworld</th>
+        <th>Age</th>  
+    </thead> 
+    <tbody>
+       
+        </tr> 
+        
+    </tbody> 
+</table> -->
+

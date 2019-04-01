@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+
+    <title>Dog Shelter Database</title>
+
+    <link rel="stylesheet" href="/static/style.css" media="screen">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    {{#each jsscripts}}
+      <script src="/static/{{this}}"></script>
+    {{/each}}
+</head>
+<body>
+    <header>
+      <h1 class="site-title"></i> Dogs</h1>
+
+      <nav class="navbar">
+        <ul class="navlist">
+          <li class="navitem navlink"><a href="index.html">Home</a></li>
+	    <li class="navitem navlink"><a href="dogs">Dogs</a></li>
+          <li class="navitem navlink"><a href="owners">Owners</a></li>
+          <li class="navitem navlink"><a href="shelters">Shelters</a></li>
+          <li class="navitem navlink"><a href="vets">Vets</a></li>
+          <li class="navitem navlink"><a href="vaccines">Vaccines</a></li>
+          </li>
+        </ul>
+      </nav>
+    </header>
+	{{{body}}}
+</body>
+</html>

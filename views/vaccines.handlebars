@@ -1,0 +1,49 @@
+<html>
+
+ <script src="/static/deletevaccine.js"></script>
+ <script src="/static/updatevaccine.js"></script>
+
+<title>Vaccines</title>
+
+<h2> This is the Vaccines Page </h2> 
+	  <p>From this page the user can go through, add, delete, and browse all the vaccines. </p>
+	  
+	  <table>
+	  <tr>
+		<th>List of Vaccines</th>
+		
+	  </tr>
+	  {{#each vaccines}}
+	  <tr>
+		<td> {{vaccine_name}} </td> 
+		<!--<td><button onclick="deletevaccine({{vaccination_id}})">Delete</button></td>-->
+	  {{/each}} 
+	  </tr>
+	  </table>
+	  	  
+
+<h2>Add Vaccine</h2> 
+<form id="addvaccine" action="/vaccines" method="post">
+  <p>Here a user can add a vaccine into the database.</p>
+	Vaccine Name 
+	<input type="text" name="vacc_name"><br>
+	<input type="submit" value="Submit"><br>
+</form>
+
+<h2>Edit Vaccine</h2>
+<form id="update-vaccine" action="/vaccines" method="post">
+  <p>Edit a vaccine name in the database.</p>
+	Vaccine Name 
+	<select id="vaccineselector">
+      {{#each vaccines}}
+        <option value="{{vaccination_id}}">{{vaccine_name}}</option>
+      {{/each}}
+    </select><br>
+	New Vaccine Name 
+	<input type="text" name="vaccine_name"><br>
+	<!--<input type="submit" value="Submit"><br>-->
+</form>	
+	<button onclick="updateVaccine(vaccineselector.value)">Update</button>
+
+
+</html>

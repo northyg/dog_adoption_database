@@ -1,0 +1,109 @@
+<html>
+
+ <script src="/static/updatedog.js"></script>
+ <script src="/static/deletevaccdate.js"></script>
+
+<main>
+
+<!--<h2>Dog ID to fetch is: {{dog_id}}   {{dog_list.birth_date}}</h2>-->
+
+
+      <h2> This is the Owner Details Page </h2> 
+        <p>From this page the user can have an owner adopt a dog </p>
+	<table>
+	  <tr>
+	    <th>Name</th>
+	    <th>Address</th>
+	    <th>Phone</th>
+<!--	    <th>Breed</th>
+	    <th>Color</th>
+	    <th>Weight</th>
+	    <th>Shelter</th>
+	    <th>Availability</th>
+	    <th>Edit</th> -->
+	  </tr>
+	  <tr> 
+		<!--	<form id="update-dog" action="/dog_details?dog_id={{dog_list.dog_id}}" method="post"> -->
+	    <td><!-- <input type="text" name="dog_name" value=" -->{{owner_list.first_name}} {{owner_list.last_name}}</td>
+<!--	    <td><input type="date" name="birth_date" value="{{dog_list.birth_date}}"></td> -->
+		<td>{{owner_list.address}}, {{owner_list.city}}, {{owner_list.state}} {{owner_list.zip_code}}</td>  
+		<td>{{owner_list.phone_number}}</td>
+	    </form>
+			
+	  </tr>
+		<script defer>selectGender("{{dog_list.gender}}");</script>
+		<script defer>selectAvailability("{{dog_list.availability}}");</script>
+		<script defer>selectShelter({{dog_list.shelter_id}});</script>
+	</table>
+	  
+	<!--Display a Dog's Owners -->
+
+	<p>Dogs this person owns
+	  <table>
+	    <tr>
+	      <th>Dog ID</th>
+	      <th>Dog Name</th>
+	      <th>Adoption Date</th>
+	      </tr>
+	    {{#each dogs_owned_list}}
+	    <tr>
+	      <td>{{dog_id}}</td>
+	      <td>{{dog_name}}</td>
+	      <td>{{adoption_date}}</td>
+	    </tr>
+	    {{/each}}
+	  </table>  
+
+	<!-- Display Dog Vaccination records -->
+	  <p> 
+	    <table>
+	  <tr>
+	    <th>Vaccination Name</th>
+	    <th>Vaccination Date</th>
+	    <th>Delete Record </th>
+	  </tr>
+	  {{#each vaccination_list}}
+	  <tr>
+	    <td>{{vaccine_name}}</td>
+	    <td>{{vaccination_date}}</td>
+		<!-- <td><button type="button" name="{{dates_id}}" onclick="deletevaccdate({{dog_id}},{{dates_id}})", method="delete">Delete</button></td> -->
+		<td><button type="button" name="{{dates_id}}" onclick="deletevaccdate({{dates_id}})", method="delete">Delete</button></td>
+	  </tr>
+	  {{/each}}
+	</table>
+	  
+
+<h2>Adopt a Dog</h2> 
+<p>Here a user can add an existing to the dog's history into the database.</p>
+  <form id="adddogtoowner" action="/owner_details?owner_id={{owner_id}}" method="post">
+        Dog Name: 
+	<select name="dog_id"> 
+        {{#each full_dog_list}}
+          <option value="{{dog_id}}">{{dog_name}} from {{shelter_name}}</option>
+        {{/each}}
+	</select><br>
+	    Adoption date 
+	    <input type="date" name="adoption_date"><br>
+		<input type="submit" value="Submit"><br>
+		  </form>
+</form>
+
+<!--
+<h3>Current people:</h3>
+<table>
+    <thead> 
+        <th>First Name</th> 
+        <th>Last Name</th> 
+        <th>Homeworld</th>
+        <th>Age</th>  
+    </thead> 
+    <tbody>
+       
+        </tr> 
+        
+    </tbody> 
+</table> 
+
+-->
+
+</html>

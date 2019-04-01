@@ -1,0 +1,94 @@
+<html>
+
+<main
+  <script src="/static/updatedog.js"></script>
+  <script src="/static/deletevaccdate.js"></script>
+  
+      <h2> This is the Dogs Page </h2> 
+        <p>From this page the user can go through and browse all the different dogs. </p>
+	<form id="filter-dogs" action="/dogs" method="get">
+	  <table>
+	    <td>
+	      <select name="dog_shelter" id="shelter-selector">
+		<option value="%">All Shelters</option>
+		{{#each shelter}}
+		<option value="{{shelter_id}}">{{shelter_name}}</option>
+		{{/each}}
+	    </select>  </td>
+	    <script defer>selectShelter({{shelter_id_submitted}});</script>
+	    <td>
+	      <input type="checkbox" name="comingsoon_checkbox" id="comingsoon_checkbox" value="checked" checked> Coming Soon<br>
+	      <input type="checkbox" name="adoptable_checkbox" id="adoptable_checkbox" value="checked" checked> Adoptable<br>
+	      <input type="checkbox" name="adopted_checkbox" id="adopted_checkbox" value="checked" checked> Adopted<br>
+	    </td>
+	    <script defer>selectAvailabilityBox("{{coming_soon_submitted}}", "{{adoptable_submitted}}", "{{adopted_submitted}}");</script>
+	    <td>
+	      <input type="submit" value="Filter dogs">
+	      </button>
+	    </td>
+	  </table>
+	</form>
+	<p>
+	<table>
+	  <tr>
+	    <th>Dog ID</th>
+	    <th>Name</th>
+	    <th>Birth Date</th>
+	    <th>Gender</th>
+	    <th>Breed</th>
+	    <th>Color</th>
+	    <th>Weight</th>
+	    <th>Shelter</th>
+	    <th>Availability</th>
+	  </tr>
+	  {{#each dog_list}}
+	  <tr>
+	    <td>{{dog_id}}</td>
+	    <td><a href=./dog_details?dog_id={{dog_id}}>{{dog_name}}</a></td>
+	    <td>{{birth_date}}</td>
+	    <td>{{gender}}</td>
+	    <td>{{breed}}</td>
+	    <td>{{color}}</td>
+	    <td>{{weight}}</td>
+	    <td>{{shelter_name}}</td>
+	    <td>{{availability}}</td>
+	  </tr>
+	  {{/each}}
+	</table>
+  
+	  <p> 
+	  
+
+<h2>Add Dog</h2> 
+<p>Here a user can add a dog into the database.</p>
+  <form id="adddog" action="/dogs" method="post">
+        Name 
+	<input type="text" name="dog_name"><br>
+	    Birth date 
+	    <input type="date" name="birth_date"><br>
+	        Gender <br>
+	        <input type="radio" name="gender" value="male"> Male<br>
+        <input type="radio" name="gender" value="female"> Female<br>
+	    Breed 
+	    <input type="text" name="breed"><br>
+	        Color 
+	        <input type="text" name="color"><br>
+		    Weight 
+		    <input type="number" name="weight"><br>
+		        Availability <br>
+		        <input type="radio" name="availability" value="comingsoon" checked> Coming Soon<br>
+        <input type="radio" name="availability" value="adoptable"> Adoptable<br>
+	<input type="radio" name="availability" value="adopted"> Adopted<br>
+	    Shelter 
+            <select name="shelter_id" id="dog-shelter-selector">
+                {{#each shelter}}
+                <option value="{{shelter_id}}">{{shelter_name}}</option>
+                {{/each}}
+            </select> <br>
+	        Owner (needs to be fixed) 
+	        <input type="text" name="dog_owner"><br>
+		<input type="submit" value="Submit"><br>
+		  </form>
+</form>
+
+</html>

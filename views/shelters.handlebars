@@ -1,0 +1,73 @@
+<html>
+ 
+ <script src="/static/updateshelter.js"></script>
+
+<main>
+      <h2> This is the Shelters Page </h2> 
+        <p>From this page the user can go through and browse all the different shelters. </p>
+	<table>
+	  <tr>
+	    <th>Shelter name</th>
+	    <th>Address</th>
+	    <th>City</th>
+	    <th>State</th>
+	    <th>Zipcode</th>
+	    <th>Phone number</th>
+		<th>Email</th>
+		
+	  </tr>
+	  {{#each shelter_list}}
+	  <tr>
+	    <td><a href=./shelter_details?shelter_id={{shelter_id}}>{{shelter_name}}</a></td>
+	    <td>{{address}}</td>
+	    <td>{{city}}</td>
+	    <td>{{state}}</td>
+	    <td>{{zip_code}}</td>
+	    <td>{{phone_number}}</td>
+		<td>{{email}}</td>
+		<!--<td><button onclick="deleteshelter({{shelter_id}})">Delete</button></td>-->
+	  </tr>
+	  {{/each}}
+	</table>
+
+   
+   <h2>Add Shelter</h2> 
+	  <p>Here a user can add a shelter into the database.</p>
+	  <form id="addshelter" action="/shelters" method="post">
+	    Name 
+		<input type="text" name="shelter_name"><br>
+	    Address 
+	    <input type="text" name="address"><br>
+	    City
+	    <input type="text" name="city"><br>
+	    State  
+	    <input type="text" name="state"><br>
+		Zipcode  
+	    <input type="number" name="zip_code"><br>
+	    Phone Number
+	    <input type="number" name="phone_number"><br>
+	    Email 
+	    <input type="text" name="email"><br>
+		<input type="submit" value="Submit"><br>
+	  </form>
+
+
+
+</html>
+
+<!--
+<h3>Current people:</h3>
+<table>
+    <thead> 
+        <th>First Name</th> 
+        <th>Last Name</th> 
+        <th>Homeworld</th>
+        <th>Age</th>  
+    </thead> 
+    <tbody>
+       
+        </tr> 
+        
+    </tbody> 
+</table> -->
+

@@ -1,0 +1,44 @@
+body {
+  font-family: Roboto, Helvetica, sans-serif;
+  margin: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #eee;
+  color: black;
+}
+
+a {
+  text-decoration: bold;
+  color: gray;
+}
+
+.site-title {
+  margin: 0;
+  padding: 10px 20px;
+  font-size: 30px;
+  font-weight: 100;
+  background-color: purple;
+  color: #fff;
+}
+
+.navbar {
+  background-color: purple;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.navlist {
+  margin: 0 0 0 20px;
+  padding: 0;
+}
+
+.navitem {
+  color: #fff;
+  display: inline-block;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+

@@ -1,0 +1,81 @@
+<html>
+
+ <script src="/static/updateshelter.js"></script>
+ <!--<script src="/static/deletevaccdate.js"></script>-->
+
+<main>
+
+<!--<h2>shelter ID to fetch is: {{shelter_id}}   {{shelter_list.birth_date}}</h2>-->
+
+
+      <h2> This is the Shelter Details Page </h2> 
+        <p>From this page the user can go through and modify different fields. </p>
+	<table>
+	  <tr>
+	    <th>Shelter name</th>
+	    <th>Address</th>
+	    <th>City</th>
+	    <th>State</th>
+	    <th>Zipcode</th>
+	    <th>Phone number</th>
+		<th>Email</th>
+	    <th>Edit</th>
+	  </tr>
+	  <tr> 
+			<form id="update-shelter" action="/shelter_details?shelter_id={{shelter_list.shelter_id}}" method="post">
+	    <td><input type="text" name="shelter_name" value="{{shelter_list.shelter_name}}"></td>
+	    <td><input type="text" name="shelter_address" value="{{shelter_list.address}}"></td>
+	    <td><input type="text" name="shelter_city" value="{{shelter_list.city}}">
+	    </td>
+	    <td><input type="text" name="shelter_state" value="{{shelter_list.state}}"></td>
+	    <td><input type="number" name="shelter_zip_code" value="{{shelter_list.zip_code}}"></td>
+	    <td><input type="text" name="shelter_phonenumber" value="{{shelter_list.phone_number}}"></td>
+		<td><input type="text" name="shelter_email" value="{{shelter_list.email}}"></td>		
+	    <!--<td><select name="shelter_shelter" id="shelter-selector">
+    		{{#each shelter}}
+			<option value="{{shelter_id}}">{{shelter_name}}</option>
+		{{/each}}
+		</select></td>-->	    
+	    </form>
+            <td><button onclick="updateShelter({{shelter_list.shelter_id}})">Update</button>	</td>
+			
+	  </tr>
+		
+	</table>
+
+<!--
+<h2>Add Dog to Shelter</h2> 
+<p>Here a user can add an existing to the dog's history into the database.</p>
+  <form id="adddogvaccine" action="/dog_details?dog_id={{dog_id}}" method="post">
+        Vaccination Name: 
+	<select name="vaccination_id"> 
+        {{#each full_vaccination_list}}
+          <option value="{{vaccination_id}}">{{vaccine_name}}</option>
+        {{/each}}
+	</select><br>
+	    Vaccination date 
+	    <input type="date" name="vaccination_date"><br>
+		<input type="submit" value="Submit"><br>
+		  </form>
+</form>
+ -->
+
+<!--
+<h3>Current people:</h3>
+<table>
+    <thead> 
+        <th>First Name</th> 
+        <th>Last Name</th> 
+        <th>Homeworld</th>
+        <th>Age</th>  
+    </thead> 
+    <tbody>
+       
+        </tr> 
+        
+    </tbody> 
+</table> 
+
+-->
+
+</html>
